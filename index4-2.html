@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工信息展示</title>
+	<link rel="stylesheet" href="style-2.css">
+    <style>
+        /* 类别选择器 */
+        .tech-dept {
+            background-color: #e0f7e9;
+        }
+        .marketing-dept {
+            background-color: #e3f2fd;
+        }
+        .hr-dept {
+            background-color: #ffe0b2;
+        }
+
+        /* 限制的 ID 选择器 */
+        #special-employee {
+            border: 2px solid #8e24aa;
+            background-color: #f5f5f5;
+        }
+
+        /* 后代选择器 */
+        .tech-dept .employee-card, .marketing-dept .employee-card, .hr-dept .employee-card {
+            color: #424242;
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* 并集选择器 */
+        .tech-dept, .marketing-dept {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        /* 伪类选择器 */
+        .employee-card:hover {
+            background-color: #fff9c4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .tech-dept .employee-card:nth-child(odd), .marketing-dept .employee-card:nth-child(odd) {
+            background-color: #f5f5f5;
+        }
+
+        /* 伪类与类别选择器组合 */
+        .high-rating:hover {
+            color: #ffd700;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="tech-dept">
+        <h2>技术部</h2>
+        <div class="employee-card" id="special-employee">
+            张三 - 技术经理 - 评分：<span class="rating high-rating">4.6</span>
+        </div>
+        <div class="employee-card">
+            李四 - 软件工程师 - 评分：<span class="rating high-rating">4.8</span>
+        </div>
+        <div class="employee-card">
+            王五 - 技术顾问 - 评分：<span class="rating">4.3</span>
+        </div>
+    </div>
+
+    <div class="marketing-dept">
+        <h2>市场部</h2>
+        <div class="employee-card">
+            赵六 - 市场总监 - 评分：<span class="rating">4.4</span>
+        </div>
+        <div class="employee-card">
+            钱七 - 市场专员 - 评分：<span class="rating high-rating">4.7</span>
+        </div>
+    </div>
+
+    <div class="hr-dept">
+        <h2>人事部</h2>
+        <div class="employee-card">
+            周八 - 招聘专员 - 评分：<span class="rating">4.5</span>
+        </div>
+        <div class="employee-card">
+            吴九 - 人事经理 - 评分：<span class="rating high-rating">4.6</span>
+        </div>
+    </div>
+</body>
+</html>
